@@ -10,36 +10,27 @@ Pushate, pushate, pushate e fidatevi: amerete gli oggetti e poi cercherete di us
 <?php
  class Calzatura {
    public $marca;
-   public $tipologia;
    public $fasciaDiPrezzo;
    public $tipoDiSuola;
    public $tipoDiChiusura;
    public $colore;
    public $quantita;
 
-   public function __construct($_marca, $_tipologia)
+   public function __construct($_marca)
    {
      $this->marca = $_marca;
-     $this->tipologia = $_tipologia;
    }
-   public function totalprice($prezzo) {
+   public function totalprice($_prezzo) {
      if(empty($this->quantita)) {
        die("Non hai inserito la quantità");
      }
-     return $this->quantita * $prezzo;
+     return $this->quantita * $_prezzo;
+   }
+
+   public function getInfo() {
+     return [
+       $this->marca,
+       $this->fasciaDiPrezzo
+     ];
    }
  }
-
- $geox = new Calzatura("Geox", "Stivaletti");
- $geox->fasciaDiPrezzo = "Premium";
- $geox->tipoDiSuola = "gomma";
- $geox->quantita = 10;
- echo $geox->totalprice(150);
- var_dump($geox);
-
- $dolceGabbana = new Calzatura("Dolce & Gabbana", "Stivaletti");
- $dolceGabbana->fasciaDiPrezzo = "Premium";
- $dolceGabbana->tipoDiSuola = "pelle";
- $dolceGabbana->quantita = 100;
- echo $dolceGabbana->totalprice(300);
- var_dump($dolceGabbana);
