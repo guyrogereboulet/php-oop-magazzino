@@ -11,7 +11,8 @@
      $this->sconto = $_sconto;
    }
 
-   public function totalprice($_prezzo) {
+   public function totalprice($_prezzo)
+   {
      if(empty($this->quantita)) {
        die("Non hai inserito la quantità");
      }

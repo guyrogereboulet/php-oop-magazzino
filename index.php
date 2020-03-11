@@ -18,5 +18,7 @@
  var_dump($calzaturaDolceGabbana);
  var_dump($calzaturaDolceGabbana->getInfo());
 
-$calzaturaTimberland = new Calzatura("Timberland");
+$calzaturaTimberland = new Stivaletti("Timberland", 0.5);
+$calzaturaTimberland->quantita = 10;
+echo $calzaturaTimberland->totalprice(100);
 var_dump($calzaturaTimberland);
